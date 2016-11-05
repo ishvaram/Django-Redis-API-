@@ -94,17 +94,17 @@ CACHES = {
 }
 
 
-DATABASES = {
-    #  'default': {
-    #     'ENGINE': 'django_redis_engine',
-    #     'NAME': '',
-    #     'USER': '',
-    #     'PASSWORD': '',
-    #     'HOST': 'localhost',
-    #     'PORT': 6379,
+# DATABASES = {
+#     #  'default': {
+#     #     'ENGINE': 'django_redis_engine',
+#     #     'NAME': '',
+#     #     'USER': '',
+#     #     'PASSWORD': '',
+#     #     'HOST': 'localhost',
+#     #     'PORT': 6379,
        
-    # }
-}
+#     # }
+# }
 
 
 # CACHES = {
@@ -132,3 +132,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS=(BASE_DIR.child('static'),)
+
