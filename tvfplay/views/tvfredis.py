@@ -8,11 +8,15 @@ redis and does the given operations
 '''
 import sys
 import json
+import os
 import ast
 import redis
 from django.http import HttpResponse
 from django.core.serializers.json import json
 from django.core.serializers.json import DjangoJSONEncoder
+
+
+r = redis.from_url(os.environ.get("redis://h:pe48vbms2ufsapeqls9d1mpk610@ec2-107-20-255-37.compute-1.amazonaws.com:22919"))
 
 try:
 	REDIS_CONN = redis.StrictRedis(host='localhost', port=6379, db=1)
