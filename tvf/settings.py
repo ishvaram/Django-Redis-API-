@@ -81,7 +81,8 @@ WSGI_APPLICATION = 'tvf.wsgi.application'
 
 
 
-redis_url = urlparse.urlparse(os.environ.get('redis://h:pe48vbms2ufsapeqls9d1mpk610@ec2-107-20-255-37.compute-1.amazonaws.com:22919'))
+redis_url = urlparse.urlparse(os.environ.get('REDISTOGO_URL'))
+
 CACHES = {
     "default": {
          "BACKEND": "redis_cache.RedisCache",
