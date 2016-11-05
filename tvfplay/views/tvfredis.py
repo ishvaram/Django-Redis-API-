@@ -24,16 +24,16 @@ except Exception, exc:
 	REDIS_CONN = None
 
 
-def redoo(request):
-	REDIS_CONN = redis.from_url(os.environ.get("REDIS_URL"))
-	REDIS_CONN_DATA = REDIS_CONN.keys()
-	return REDIS_CONN_DATA 
+# def redoo(request):
+# 	REDIS_CONN = redis.from_url(os.environ.get("REDIS_URL"))
+# 	REDIS_CONN_DATA = REDIS_CONN.keys()
+# 	return REDIS_CONN_DATA 
 
-def insert(request):
-	with open('interview.json') as data_file:
-		test_data = json.load(data_file)
-		REDIS_CONN.set('tvf_json', test_data)
-	return True
+# def insert(request):
+# 	with open('interview.json') as data_file:
+# 		test_data = json.load(data_file)
+# 		REDIS_CONN.set('tvf_json', test_data)
+# 	return True
 
 
 def index(request):
