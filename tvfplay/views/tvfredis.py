@@ -23,6 +23,15 @@ except Exception, exc:
 	sys.exit(0)
 
 
+print REDIS_CONN
+
+def insert():
+	with open('./interview.json') as data_file:
+		test_data = json.load(data_file)
+	REDIS_CONN.set('tvf_json', test_data)
+	return True
+
+
 def index():
 	''' Index request Funtion
 	'''
