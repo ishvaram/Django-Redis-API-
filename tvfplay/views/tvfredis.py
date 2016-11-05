@@ -16,10 +16,8 @@ from django.core.serializers.json import json
 from django.core.serializers.json import DjangoJSONEncoder
 
 
-# r = redis.from_url(os.environ.get("redis://h:pe48vbms2ufsapeqls9d1mpk610@ec2-107-20-255-37.compute-1.amazonaws.com:22919"))
-
 try:
-	REDIS_CONN = r = redis.from_url(os.environ.get("REDISTOGO_URL"))
+	REDIS_CONN = redis.from_url(os.environ.get("REDISTOGO_URL"))
 except Exception, exc:
 	print "Unable to connect to Redis.Please check the redis service is running"
 	sys.exit(0)
