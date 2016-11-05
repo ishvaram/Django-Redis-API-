@@ -30,19 +30,19 @@ def redoo(request):
 	return REDIS_CONN_DATA 
 
 def insert(request):
-	with open('./interview.json') as data_file:
+	with open('interview.json') as data_file:
 		test_data = json.load(data_file)
 		REDIS_CONN.set('tvf_json', test_data)
 	return True
 
 
-def index():
+def index(request):
 	''' Index request Funtion
 	'''
 	return HttpResponse("Welcome to  TVF API Redis-Django")
 
 
-def all_items():
+def all_items(request):
 	'''	List all the the Dict from Redis
 	'''
 	try:
@@ -60,7 +60,7 @@ def all_items():
 			content_type='application/json', status=500)
 
 
-def category():
+def category(request):
 	'''	List all the Categories
 	'''
 	categories = {'categories': []}
