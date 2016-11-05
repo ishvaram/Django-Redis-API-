@@ -17,13 +17,12 @@ from django.core.serializers.json import DjangoJSONEncoder
 
 
 try:
-	REDIS_CONN = redis.from_url(os.environ.get("REDISTOGO_URL"))
+	REDIS_CONN = redis.from_url(os.environ.get("REDIS_URL"))
 except Exception, exc:
 	print "Unable to connect to Redis.Please check the redis service is running"
 	REDIS_CONN = None
 
 
-print REDIS_CONN
 
 def insert(request):
 	with open('./interview.json') as data_file:
