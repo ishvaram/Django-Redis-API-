@@ -20,7 +20,7 @@ try:
 	REDIS_CONN = redis.from_url(os.environ.get("REDISTOGO_URL"))
 except Exception, exc:
 	print "Unable to connect to Redis.Please check the redis service is running"
-	sys.exit(0)
+	REDIS_CONN = None
 
 
 print REDIS_CONN
