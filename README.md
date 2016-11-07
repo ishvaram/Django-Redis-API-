@@ -14,7 +14,6 @@ Used the below script to load the data to redis:
 import json
 import redis
 import os,sys
-port=22919, db=1)
 r = redis.StrictRedis(host='localhost', port=6379, db=1)
 with open('interview.json') as data_file:
     test_data = json.load(data_file)
